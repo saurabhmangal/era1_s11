@@ -33,11 +33,6 @@ Following are the sample images of train dataset:<br>
 Following are the sample imagese of the test dataset:<br> 
 <img src="https://github.com/saurabhmangal/era1_s11/blob/main/images/test_dataset.jpg" alt="alt text" width="600px">
 
-
-**Custom Resnet ARCHITECTURE**<br> 
-<img src="https://github.com/saurabhmangal/era1_s11/blob/main/images/model11.JPG" alt="alt text" width="600px">
-
-
 **Epoch Results:**<br>
 EPOCH: 0<br>
 Loss=1.3281242847442627 LR =0.00038138098159509206 Batch_id=97 Accuracy=38.49: 100% 98/98 [00:11<00:00,  8.68it/s]<br>
