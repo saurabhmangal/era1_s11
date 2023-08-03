@@ -9,13 +9,13 @@ The Task given was to use CIFAR 10 data and uses resnet model and monitor the ac
 -Colab_notebook.ipynb - Google Colab file to executed<br> 
 -main.py              - main file in .py mode<br> 
 -plots.py             - contains function to plot<br> 
--utils.py             - contains different functions which are <br>      Cifar10SearchDataset, <br> 
-create_train_data_loader, <br> 
+-utils.py             - contains different functions which are<br>      Cifar10SearchDataset,<br> 
+create_train_data_loader,<br> 
 create_test_data_loader,<br> 
 train_transforms,<br> 
 test_transform,<br>  
-imshow, <br>    
-display_mis_images, <br>               learning_r_finder, <br>     OneCycleLR_policy<br> 
+imshow,<br>    
+display_mis_images,<br>               learning_r_finder,<br>     OneCycleLR_policy<br> 
 -calc_loss_accuracy.py - function to train and test loss and accuracy while model training<br> 
 -images:<br> 
   -Accuracy & Loss.jpg        -- Plot of train and test accuracy and loss with respect to epochs<br> 
