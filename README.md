@@ -5,25 +5,26 @@ The Task given was to use CIFAR 10 data and uses resnet model and monitor the ac
 
 **File Structure**<br> 
 -resnet.py           - has the resnet model copied from the github library suggested in the assignment<br>
-
 -era_s11_cifar.ipynb  - the main .ipynb file<br> 
 -Colab_notebook.ipynb - Google Colab file to executed<br> 
 -main.py              - main file in .py mode
 -plots.py             - contains function to plot
--utils.py             - contains different 
-
+-utils.py             - contains different functions which are 
+                        Cifar10SearchDataset, 
+                        create_train_data_loader, 
+                        create_test_data_loader,
+                        train_transforms,
+                        test_transform, 
+                        imshow, 
+                        display_mis_images, 
+                        learning_r_finder, 
+                        OneCycleLR_policy
+-calc_loss_accuracy.py - function to train and test loss and accuracy while model training
 -images:<br> 
   -Accuracy & Loss.jpg        -- Plot of train and test accuracy and loss with respect to epochs<br> 
   -miss_classified_image.jpg  -- sample mis classified images. <br> 
   -test_dataset.jpg           -- sample test dataset<br> 
   -train_dataset.jpg          -- sample train dataset after tranformation<br> 
-
--modular:<br> 
-  -create_data_loader.py      -- import CIFAR dataset<br> 
-  -dataloader.py              -- to create train and test loader<br> 
-  -plots.py                   -- function to plot images<br> 
-  -train.py                   -- function to train model by calulating loss<br> 
-  -tranforms.py               -- function to transform image<br> 
 
 The tranformation performed as as follows:<br> 
 
