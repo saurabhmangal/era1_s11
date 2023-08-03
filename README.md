@@ -25,6 +25,7 @@ The Task given was to use CIFAR 10 data and uses resnet model and monitor the ac
   -miss_classified_image.jpg  -- sample mis classified images. <br> 
   -test_dataset.jpg           -- sample test dataset<br> 
   -train_dataset.jpg          -- sample train dataset after tranformation<br> 
+  -grad_cam.png               -- image gallery for grad cam images
 
 The tranformation performed as as follows:<br> 
 
