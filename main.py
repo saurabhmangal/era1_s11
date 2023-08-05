@@ -34,8 +34,8 @@ try:
     print ("proxy_exported")
 except:
     None
-    
-    
+
+
 SEED = 1
 
 # CUDA?
@@ -47,7 +47,7 @@ torch.manual_seed(SEED)
 
 if cuda:
     torch.cuda.manual_seed(SEED)
-    
+
 device = torch.device("cuda" if cuda else "cpu")
 print(device)
 
@@ -68,22 +68,22 @@ test_loader = torch.utils.data.DataLoader(test, **dataloader_args)
 
 
 # Model Params, optimizer, loss criterion and model summary
-#Can't emphasize on how important viewing Model Summary is.
-#Unfortunately, there is no in-built model visualizer, so we have to take external help
+# Can't emphasize on how important viewing Model Summary is.
+# Unfortunately, there is no in-built model visualizer, so we have to take external help
 
 m = resnet.ResNet18().to(device)
 optimizer = optim.Adam(m.parameters(), lr=0.001, weight_decay=1e-3)
 criterion = nn.CrossEntropyLoss()
 summary(m, input_size=(3, 32, 32))
 
-## Calculating the max and min LR using one cycle LR policy
+# # Calculating the max and min LR using one cycle LR policy
 
 # to reset the model and optimizer to their initial state
 learning_r_finder(m,optimizer,criterion, device, train_loader, n_iters=200,  end_lr=10)
 #sys.exit()
 
 # Let's Train and test our model
-### using one cycle lr policy
+# ## using one cycle lr policy
 
 EPOCHS = 20
 scheduler = OneCycleLR_policy(optimizer,train_loader,EPOCHS,peak_value=5.0,div_factor=100,final_div_factor=100,max_lr=1.83E-03)
@@ -93,7 +93,7 @@ for epoch in range(EPOCHS):
     print("EPOCH: "+ str(epoch)),
     train_acc,train_losses = model_training(m, device, train_loader, optimizer, scheduler, criterion)
     test_acc,test_losses,miss_classified_data = model_testing_old(m, device, test_loader, criterion)
-    
+
 ## Displaying Train Test Accuracy and Loss Plots
 os.system('mkdir images')
 fig = plot_losses(train_losses, train_acc, test_losses, test_acc)
@@ -101,9 +101,9 @@ fig.savefig('images/Accuracy & Loss.jpg')
 
 ## Displaying Sample Miss Classified Images
 miss_classified_images = display_mis_images(miss_classified_data,10)
-miss_classified_images.savefig("images/miss_class,jpg")
+miss_classified_images.savefig("images/miss_class.jpg")
 
-## Displaying Sample Train Dataset after trasformation
+# # Displaying Sample Train Dataset after trasformation
 
 batch_data_train, batch_label_train = next(iter(train_loader))
 figure_train = plot_images(batch_data_train, batch_label_train.tolist(), 12, 3, 'CIFAR10')
